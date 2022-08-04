@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./src/style.css">
+	<title>Paint SH</title>
+</head>
+
+<body>
+	<div class="align">
+		<p>Select a Color to Draw</p>
+		<canvas id="myCanvas">
+
+		</canvas>
+		
+		<form onsubmit="selectColor(event)">
+			<input type="color" id="colorPicker">
+			<button>Select Color</button>
+		</form>
+		<button onclick="downloadCanvas()">Download</button>
+	</div>
+	<script src="./src/script.js"></script>
+</body>
+
+</html>
