@@ -1,6 +1,6 @@
 #myCanvas {
-	width: 400px;
-	height: 400px;
+	/* width: 400px;
+	height: 400px; */
 	background-color: white;
 	border: 3px solid red;
 }
