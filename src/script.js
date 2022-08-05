@@ -4,15 +4,15 @@ let colorPickingFunction = () => {
 	document.querySelector('.align').style.backgroundColor = colorPicked;
 	return colorPicked
 }
- 
 
+let colorPicked = '#0000';
 
 let selectColor = (event) => {
 	event.preventDefault()
-	let colorPicked = colorPickingFunction();
+	colorPicked = colorPickingFunction();
 	console.log('color', colorPicked)
 
-	// colorPicked ? colorPicked: #00000
+	// `${!colorPicked} ? ${colorPicked}: #00000`
 
 
 	//sir ka code 
@@ -26,6 +26,7 @@ let selectColor = (event) => {
 		isMouseDown = true;
 	});
 	document.querySelector("#myCanvas").addEventListener("mouseup", (event) => {
+		ctx.beginPath();
 		isMouseDown = false;
 	});
 
@@ -36,11 +37,13 @@ let selectColor = (event) => {
 			console.log("h: ", event.offsetX);
 			console.log("w: ", event.offsetY);
 
-			ctx.fillRect(
-				event.offsetX,
-				event.offsetY,
-				2, 2
-			);
+			ctx.lineWidth = 10
+			ctx.lineCap = "round"
+			ctx.lineTo(event.offsetX, event.offsetY);
+			ctx.stroke();
+			ctx.beginPath(); //to mouse up ky baad jab dubara mouse up down hota hy tw bech ki line bhi draw ho jata hy
+			ctx.moveTo(event.offsetX, event.offsetY)
+			ctx.strokeStyle=colorPicked;
 
 		}
 
